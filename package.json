@@ -2,6 +2,11 @@
   "name": "git-submodule-main",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "build": "yarn run tsc",
+    "start": "node index",
+    "test": "yarn run nyc mocha --recursive **/*.spec.ts"
+  },
   "repository": "git@github.com:walk8243/git-submodule-main.git",
   "author": "walk8243 <walk8243@gmail.com>",
   "license": "GPL-3.0",
