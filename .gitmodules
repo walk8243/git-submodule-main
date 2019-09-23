@@ -1,3 +1,6 @@
 [submodule "lib/math"]
 	path = lib/math
 	url = git@github.com:walk8243/git-submodule-math.git
+[submodule "model/nogizaka46"]
+	path = model/nogizaka46
+	url = git@github.com:walk8243/git-submodule-nogi.git
