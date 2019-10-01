@@ -5,7 +5,7 @@
   "scripts": {
     "build": "yarn run tsc",
     "start": "node index",
-    "test": "yarn run nyc mocha **/*.spec.ts"
+    "test": "yarn run nyc mocha **/*.test.ts"
   },
   "repository": "git@github.com:walk8243/git-submodule-main.git",
   "author": "walk8243 <walk8243@gmail.com>",
@@ -15,8 +15,8 @@
   },
   "devDependencies": {
     "@types/mocha": "^5.2.7",
-    "@types/node": "^12.7.5",
-    "mocha": "^6.2.0",
+    "@types/node": "^12.7.8",
+    "mocha": "^6.2.1",
     "nyc": "^14.1.1",
     "ts-node": "^8.4.1"
   },
@@ -24,12 +24,21 @@
     "extension": [
       ".ts"
     ],
+    "include": [
+      "**/*.ts"
+    ],
     "exclude": [
       "**/*.d.ts",
-      "**/*.spec.ts"
+      "**/*.test.ts",
+      "**/*.js"
     ],
     "require": [
       "ts-node/register"
-    ]
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "sourceMap": true
   }
 }
