@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "yarn run tsc",
-    "start": "node index",
-    "test": "yarn run nyc mocha **/*.test.ts"
+    "build": "yarn run tsc --build",
+    "clean": "yarn run tsc --build --clean",
+    "main": "node index",
+    "mocha": "yarn run nyc mocha **/*.test.ts",
+    "start": "yarn run build && yarn run main",
+    "test": "yarn run clean && yarn run mocha"
   },
   "repository": "git@github.com:walk8243/git-submodule-main.git",
   "author": "walk8243 <walk8243@gmail.com>",
@@ -38,7 +41,6 @@
     "reporter": [
       "text",
       "html"
-    ],
-    "sourceMap": true
+    ]
   }
 }
