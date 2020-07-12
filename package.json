@@ -3,26 +3,44 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "yarn run tsc",
-    "start": "node index",
-    "test": "yarn run nyc mocha --recursive **/*.spec.ts"
+    "build": "yarn run tsc --build",
+    "clean": "yarn run tsc --build --clean",
+    "main": "node index",
+    "mocha": "yarn run nyc mocha **/*.test.ts",
+    "start": "yarn run build && yarn run main",
+    "test": "yarn run clean && yarn run mocha"
   },
   "repository": "git@github.com:walk8243/git-submodule-main.git",
   "author": "walk8243 <walk8243@gmail.com>",
   "license": "GPL-3.0",
   "dependencies": {
-    "typescript": "^3.6.3"
+    "typescript": "^3.9.6"
   },
   "devDependencies": {
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^12.7.5",
-    "mocha": "^6.2.0",
-    "nyc": "^14.1.1",
-    "ts-node": "^8.4.1"
+    "@types/mocha": "^8.0.0",
+    "@types/node": "^14.0.22",
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0",
+    "ts-node": "^8.10.2"
   },
   "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "**/*.ts"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "**/*.test.ts",
+      "**/*.js"
+    ],
     "require": [
       "ts-node/register"
+    ],
+    "reporter": [
+      "text",
+      "html"
     ]
   }
 }
